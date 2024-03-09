@@ -6,6 +6,14 @@ type Matrix struct {
 	Data    []int
 }
 
+func NewMatrix(row, column int) *Matrix{
+	return &Matrix{
+		Rows: row,
+		Cloumns: column,
+		Data: make([]int, row*column),
+	}
+}
+
 func getIndex(matrix *Matrix, row, column int) int {
 	return (row * matrix.Cloumns) + column
 }
