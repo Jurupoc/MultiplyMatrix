@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"projectm/routes"
+)
 
 func main() {
-	fmt.Println("Hello World")
+	routes.SetupRoutes()
 }
