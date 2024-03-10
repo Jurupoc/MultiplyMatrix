@@ -23,7 +23,6 @@ func getCsvName(request *http.Request, names []string) ([]string, error) {
 }
 
 func CsvHandler(writer http.ResponseWriter, request *http.Request) {
-	fmt.Println("Hellow 1")
 	err := request.ParseMultipartForm(10 << 20)
 	if err != nil {
 		http.Error(writer, err.Error(), http.StatusBadGateway)
