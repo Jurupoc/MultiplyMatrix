@@ -7,7 +7,7 @@ import (
 
 func fillMatrix(matrix model.Matrix) {
 	for row_index := range matrix.Rows {
-		for column_index := range matrix.Cloumns{
+		for column_index := range matrix.Columns{
 			matrix.Set(row_index, column_index, 1)
 		}
 	}
@@ -20,9 +20,9 @@ func TestMatrixMultiplication(t *testing.T) {
 	fillMatrix(*testMatrixA)
 	fillMatrix(*testMatrixB)
 
-	result := MultiplyMatrix(testMatrixA, testMatrixB)
+	result, _ := MultiplyMatrix(testMatrixA, testMatrixB)
 	for row_index := range testMatrixA.Rows{
-		for column_index := range testMatrixA.Cloumns{
+		for column_index := range testMatrixA.Columns{
 			if result.At(row_index, column_index) != 2 {
 				t.Errorf("erro on multiply matrix expected value %d got: %v", 2, result.Data)
 			}

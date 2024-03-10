@@ -2,20 +2,20 @@ package model
 
 type Matrix struct {
 	Rows    int
-	Cloumns int
+	Columns int
 	Data    []int
 }
 
 func NewMatrix(row, column int) *Matrix{
 	return &Matrix{
 		Rows: row,
-		Cloumns: column,
+		Columns: column,
 		Data: make([]int, row*column),
 	}
 }
 
 func getIndex(matrix *Matrix, row, column int) int {
-	return (row * matrix.Cloumns) + column
+	return (row * matrix.Columns) + column
 }
 
 func (matrix *Matrix) At(row, column int) int {
